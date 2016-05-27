@@ -7,4 +7,5 @@ for use, please use next
 - git clone
 - npm init
 - webpack
-- open index.html in your favourite browser
+- npm start
+- http://localhost:8080/
