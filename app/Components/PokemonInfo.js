@@ -4,13 +4,11 @@ var ReactDOM = require('react-dom');
 var PokemonInfo = React.createClass({
 
 	render: function () {
-		return (
-			this.props.info ? (<div>
-				<pre>
-					{this.props.info}
-				</pre>
-			</div>) : null
-		);
+		return !this.props.info ? 
+			null: 
+				(<div>
+					<img src={this.props.info.sprites.front_default} alt="" width="200px" height="200px"/>
+				</div>);
 	}
 });
 

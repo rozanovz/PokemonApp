@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var CONST = require('../Consts/Constants');
 var PokemonInfo = require('./PokemonInfo');
+var axios = require('axios');
 
 var Form = React.createClass({
 
@@ -19,9 +20,13 @@ var Form = React.createClass({
 	},
 
 	search: function () {
-		var link = CONST.link + 'pokemon/' + this.state.name
-		fetch(link).then(function (data) {
-			this.setState({info: data.status});
+		var name = this.state.name.toLowerCase();
+		var link = CONST.link + 'pokemon/' + name + "/";
+		axios.get(link).then(function (data) {
+			console.log(data);
+			this.setState({
+				info: data.data,
+			});
 		}.bind(this));
 	},
 

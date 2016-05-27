@@ -4,6 +4,7 @@
   "description": "Origin idea is to made Pokedex with showing pokemon info, abilities and image.",
   "main": "./app/app.js",
   "dependencies": {
+    "axios": "^0.11.1",
     "babel": "^6.5.2",
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
