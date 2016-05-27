@@ -1,3 +1,3 @@
 module.exports = {
-	link: "http://pokeapi.co/api/v2/"
+	link: "https://pokeapi.co/api/v2/"
 }
