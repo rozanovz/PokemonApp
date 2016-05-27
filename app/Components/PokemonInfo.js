@@ -1,13 +1,13 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var PokemonInfo = React.createClass({
+class PokemonInfo extends React.Component{
 
-	render: function () {
+	render() {
+		let b = [];
 		if(this.props.info){
-			var a = this.props.info.sprites;
-			var b = [];
-			for (var i in a) {
+			let a = this.props.info.sprites;
+			for (let i in a) {
 				if (a[i]) b.push(<img src={a[i]} alt="" />)
 			}
 		}
@@ -17,6 +17,6 @@ var PokemonInfo = React.createClass({
 					{b}
 				</div>);
 	}
-});
+};
 
 module.exports = PokemonInfo;

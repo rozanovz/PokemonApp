@@ -6,6 +6,7 @@ module.exports = {
 	},
 
 	watch: true,
+	devtool: "source-map",
 	module: {
 	    loaders: [
 	      {
@@ -13,7 +14,7 @@ module.exports = {
 	        loader: 'babel-loader',
 	        exclude: /node_modules/,
 	        query: {
-	          presets: ['react']
+	          presets: ['react', 'es2015']
 	        }
 	      }
 	    ]

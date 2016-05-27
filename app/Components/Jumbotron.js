@@ -1,9 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var Jumbotron = React.createClass({
+class Jumbotron extends React.Component{
 
-	render: function () {
+	render() {
 		return (
 			<div className="jumbotron">
 			  {this.props.children}
@@ -11,6 +11,6 @@ var Jumbotron = React.createClass({
 		);
 	}
 	
-});
+};
 
 module.exports = Jumbotron;

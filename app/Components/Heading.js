@@ -1,14 +1,14 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var Heading = React.createClass({
+class Heading extends React.Component{
 
-	render: function () {
+	render() {
 		return (
 			<h1>{this.props.text}</h1>
 		);
 	}
 	
-});
+};
 
 module.exports = Heading;

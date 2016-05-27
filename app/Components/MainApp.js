@@ -1,11 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Jumbotron = require('./Jumbotron');
-var Heading = require('./Heading');
-var Form = require('./Form');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Jumbotron from './Jumbotron';
+import Heading from './Heading';
+import Form from './Form';
 
-var App = React.createClass({
-	render: function () {
+class App extends React.Component{
+	render() {
 		return (
 			<Jumbotron>
 				<Heading text="Pokedex"></Heading>
@@ -13,6 +13,6 @@ var App = React.createClass({
 			</Jumbotron>
 		);
 	}
-});
+};
 
 module.exports = App;

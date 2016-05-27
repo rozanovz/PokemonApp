@@ -1,38 +1,40 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var CONST = require('../Consts/Constants');
-var PokemonInfo = require('./PokemonInfo');
-var axios = require('axios');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import CONST from '../Consts/Constants';
+import PokemonInfo from './PokemonInfo';
+import axios from 'axios';
 
-var Form = React.createClass({
+class Form extends React.Component{
 
-	getInitialState: function() {
-	    return {
+	constructor(props) {
+	    super(props);
+	    this.state = {
 	    	name: '',
 	    	info: ''
 	    };
-	},
+	}
 
-	handleChange: function(event) {
+	handleChange(event) {
     	this.setState({
     		name: event.target.value
     	});
-	},
+	}
 
-	search: function (e) {
+	search(e) {
 		if (e.keyCode == 13 || e.type == "click") {
-			var name = this.state.name.toLowerCase();
-			var link = CONST.link + 'pokemon/' + name + "/";
-			axios.get(link).then(function (data) {
+			let name = this.state.name.toLowerCase();
+			let link = CONST.link + 'pokemon/' + name + "/";
+			let that = this;
+			axios.get(link).then((data) => {
 				console.log(data);
-				this.setState({
+				that.setState({
 					info: data.data,
 				});
-			}.bind(this));
+			});
 		};
-	},
+	}
 
-	render: function () {
+	render() {
 		return (
 			<div className="row">
 			  <div className="col-xs-6">
@@ -42,11 +44,11 @@ var Form = React.createClass({
 					  type="text" 
 					  placeholder="Enter Pokemon Name" 
 					  value={this.state.name} 
-					  onChange={this.handleChange}
-					  onKeyDown={this.search}
+					  onChange={this.handleChange.bind(this)}
+					  onKeyDown={this.search.bind(this)}
 					/>
 					<span className="input-group-btn">
-				        <button className="btn btn-primary" onClick={this.search} >Search</button>
+				        <button className="btn btn-primary" onClick={this.search.bind(this)} >Search</button>
 				    </span>
 			  	</div>
 			  </div>
@@ -58,6 +60,6 @@ var Form = React.createClass({
 		);
 	}
 	
-});
+};
 
 module.exports = Form;
