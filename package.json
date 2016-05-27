@@ -1,0 +1,30 @@
+{
+  "name": "PokemonApp",
+  "version": "1.0.0",
+  "description": "Origin idea is to made Pokedex with showing pokemon info, abilities and image.",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rozanovz/PokemonApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rozanovz/PokemonApp/issues"
+  },
+  "homepage": "https://github.com/rozanovz/PokemonApp#readme"
+}
