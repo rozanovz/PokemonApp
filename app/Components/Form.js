@@ -19,7 +19,8 @@ var Form = React.createClass({
     	});
 	},
 
-	search: function () {
+	search: function (e) {
+		if (e.keyCode != 13) return;
 		var name = this.state.name.toLowerCase();
 		var link = CONST.link + 'pokemon/' + name + "/";
 		axios.get(link).then(function (data) {
@@ -39,8 +40,9 @@ var Form = React.createClass({
 				  placeholder="Enter Pokemon Name" 
 				  value={this.state.name} 
 				  onChange={this.handleChange}
+				  onKeyDown={this.search}
 			  />
-			  <button className="btn btn-primary" onClick={this.search}>Search</button>
+			  <button className="btn btn-primary" onClick={this.search} >Search</button>
 			  <div className="info">
 			  	<PokemonInfo info={this.state.info}></PokemonInfo>
 			  </div>
