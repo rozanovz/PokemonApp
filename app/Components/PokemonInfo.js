@@ -7,7 +7,7 @@ var PokemonInfo = React.createClass({
 		return !this.props.info ? 
 			null: 
 				(<div>
-					<img src={this.props.info.sprites.front_default} alt="" width="200px" height="200px"/>
+					<img src={this.props.info.sprites.front_default} alt=""/>
 				</div>);
 	}
 });

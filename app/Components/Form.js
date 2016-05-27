@@ -20,30 +20,38 @@ var Form = React.createClass({
 	},
 
 	search: function (e) {
-		if (e.keyCode != 13) return;
-		var name = this.state.name.toLowerCase();
-		var link = CONST.link + 'pokemon/' + name + "/";
-		axios.get(link).then(function (data) {
-			console.log(data);
-			this.setState({
-				info: data.data,
-			});
-		}.bind(this));
+		if (e.keyCode == 13 || e.type == "click") {
+			var name = this.state.name.toLowerCase();
+			var link = CONST.link + 'pokemon/' + name + "/";
+			axios.get(link).then(function (data) {
+				console.log(data);
+				this.setState({
+					info: data.data,
+				});
+			}.bind(this));
+		};
 	},
 
 	render: function () {
 		return (
-			<div className="form-group">
-			  <input 
-				  className="form-control" 
-				  type="text" 
-				  placeholder="Enter Pokemon Name" 
-				  value={this.state.name} 
-				  onChange={this.handleChange}
-				  onKeyDown={this.search}
-			  />
-			  <button className="btn btn-primary" onClick={this.search} >Search</button>
-			  <div className="info">
+			<div className="row">
+			  <div className="col-xs-6">
+			  	<div className="input-group">
+			  		<input 
+					  className="form-control" 
+					  type="text" 
+					  placeholder="Enter Pokemon Name" 
+					  value={this.state.name} 
+					  onChange={this.handleChange}
+					  onKeyDown={this.search}
+					/>
+					<span className="input-group-btn">
+				        <button className="btn btn-primary" onClick={this.search} >Search</button>
+				    </span>
+			  	</div>
+			  </div>
+			  
+			  <div className="info col-xs-6">
 			  	<PokemonInfo info={this.state.info}></PokemonInfo>
 			  </div>
 			</div>
