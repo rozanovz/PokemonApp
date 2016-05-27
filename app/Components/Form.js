@@ -44,11 +44,11 @@ class Form extends React.Component{
 					  type="text" 
 					  placeholder="Enter Pokemon Name" 
 					  value={this.state.name} 
-					  onChange={this.handleChange.bind(this)}
-					  onKeyDown={this.search.bind(this)}
+					  onChange={() => this.handleChange}
+					  onKeyDown={() => this.search}
 					/>
 					<span className="input-group-btn">
-				        <button className="btn btn-primary" onClick={this.search.bind(this)} >Search</button>
+				        <button className="btn btn-primary" onClick={() => this.search} >Search</button>
 				    </span>
 			  	</div>
 			  </div>
